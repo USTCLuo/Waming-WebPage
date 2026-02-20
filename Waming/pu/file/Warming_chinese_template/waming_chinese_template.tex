@@ -1,0 +1,513 @@
+\documentclass[UTF8,10pt,fontset=windows,twoside]{article} %若是windows系统下TexLive2018及以前的版本，则可以去掉fontset=windows这一段命令。
+\usepackage{ctex} %从2019版本开始，windows系统下的CTEX字体包改为fandol. 可能导致pdflatex形式无法编译，此时请改用XeLaTeX. 
+\usepackage[left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+\usepackage{tikz}   %交换图表
+\usepackage{tikz-cd}  %交换图表
+\usepackage{changepage}
+\usetikzlibrary{arrows}
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{cases}
+\usepackage{appendix}
+\usepackage[colorlinks,linkcolor=black,anchorcolor=black,citecolor=black]{hyperref}
+\usepackage[numbers]{natbib}
+%\bibliographystyle{plain}
+\usepackage{txfonts}  %请将该数学字体宏包置于各种数学公式宏包后面，否则容易产生冲突
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\headheight 27pt
+%\fancypagestyle{plain}{}
+\fancyhf{}
+\fancyhead[CO]{《蛙鸣》投稿注意事项} %稿件标题
+\fancyhead[CE]{《蛙鸣》投稿注意事项} %稿件标题或副标题
+\fancyhead[LO,RE]{中科大数院学生会} %作者
+\fancyhead[LE,RO]{\thepage} %页码
+\usepackage[scaled=0.92]{helvet}	% set Helvetica as the sans-serif font
+\renewcommand{\rmdefault}{ptm}		% set Times as the default text font
+\bibliographystyle{plain}  %.bib文件生成参考文献的排序方式
+
+
+\theoremstyle{definition}
+\newtheorem{thm}{定理}[section]
+\newtheorem{question}{问题}[section]
+\newtheorem{assump}[thm]{假设}
+\newtheorem{claim}[thm]{断言}
+\newtheorem*{thmm}{定理}  %不带编号
+\newtheorem{defn}{定义}[section]
+\newtheorem{lem}[thm]{引理}
+\newtheorem{prop}[thm]{命题}
+\newtheorem*{propp}{命题}%不带编号
+\newtheorem{cor}[thm]{推论}
+\newtheorem{conj}[thm]{猜想}
+\newtheorem*{rmk}{注 }%不带编号
+\newtheorem{ex}{例}[section]
+
+
+\newcommand{\R}{\mathbb{R}}  %实数
+\newcommand{\Z}{\mathbb{Z}}  %整数
+\newcommand{\N}{\mathbb{N}}  %自然数
+\newcommand{\Q}{\mathbb{Q}}  %有理数
+\newcommand{\CC}{\mathbb{C}}  %复数
+\newcommand{\T}{\mathbb{T}}  %环面
+\newcommand{\p}{\partial}  %偏导数
+\numberwithin{equation}{section}
+\setcounter{tocdepth}{4}
+\usepackage{xcolor}
+\usepackage{listings}
+\begin{document}
+\title{\textbf{《蛙鸣》投稿注意事项}} %Powered by 章俊彦 2013级数学科学学院 yx3x@mail.ustc.edu.cn
+\author{  %投稿时，请键入作者信息之后把这一段内容注释掉再排版，以在PDF中隐去作者信息。
+{《蛙鸣》编辑部}\\{\footnotesize 中国科学技术大学·数学科学学院·学生会}\\{\footnotesize Email: \texttt{mathsu01@ustc.edu.cn}}
+%\and
+%{佚名2}\\{\footnotesize YY级XX院}\\{\footnotesize Email: \texttt{0987654321@mail.ustc.edu.cn}}
+ }
+\date{\today}
+\maketitle
+\begin{abstract}
+首先，感谢各位读者对《蛙鸣》的热切关注。我们欢迎各位积极踊跃的投稿！本文将简要介绍《蛙鸣》投稿的注意事项，包括对作者、稿件信息，数学公式输入，交叉引用、参考文献格式的要求，以及对审稿流程的简介。
+\end{abstract}
+
+\section{投稿与审稿}\label{sect. general}
+
+\subsection{投稿方式}\label{subsect. submit}
+
+请各位作者通过邮件向《蛙鸣》投稿，投稿信箱即为中国科学技术大学数学科学学院学生会的官方邮箱 \texttt{mathsu01@ustc.edu.cn}. 具体要求如下
+\begin{enumerate}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+\item 邮件标题请拟作“蛙鸣\underline{~~}投稿方向\underline{~~}文章标题\underline{~~}作者”，邮件正文请注明作者信息（学校、院系、年级等）以及联系方式（至少留邮箱）。
+\item 建议使用中文撰写稿件，但也支持英文投稿。若您用英文撰写稿件，请务必保证语句通顺、避免语法错误，不要因为语言问题造成阅读困难，使用LaTeX时请将中文宏包 \texttt{ctex} 删除。
+\item 稿件的篇幅应控制在20页以内。
+\item 稿件中若包含数学公式，则必须使用LaTeX排版成PDF文件（推荐使用此模板）。
+\item 投稿的PDF文件中，请隐去作者信息。具体操作和本模板的TeX源码一样，请在\texttt{$\backslash$author}部分输入自己的信息，注释掉之后再排版。
+\item 稿件要求写摘要，即以通俗易懂的方式，简明扼要地介绍文章的内容与主要想法。摘要部分不宜超过150字或250个英文单词。
+\item 稿件需要注明参考文献，具体要求请参阅第 \ref{sect. cite} 节。
+\item 数学类稿件请勿写成定理、证明的单纯堆砌、罗列，请作者用自己的语言重新叙述。若稿件为读书报告，则须注明这一点，并提供阅读稿件所需的文献。
+\item 投稿时，可以只附上稿件的PDF文件。稿件被录用后，请作者将最终版本的LaTeX源文件（包括图片、参考文献等）和PDF版本一并通过邮件发送。
+\end{enumerate}
+\begin{rmk}
+用LaTeX排版时，首次排版或者因为错误崩溃后的第一次排版，需要使用pdfLaTeX排版两次（第二次是为了显示出参考文献、脚注标号等）。若用 .bib文件生成参考文献，则需要在编译一次之后，用 BibTeX 编译一次，再用 pdfLaTeX 编译一次（无脚注）或两次（脚注页码可能变更）。
+\end{rmk}
+\begin{rmk}
+对中文稿件，若您的电脑是windows系统且安装的是 TeXLive 2019 及以后的版本，则可能需要在头文件加入 fontset=windows 再用 pdfLaTeX 编译。因为此版本开始，中文的默认字体被改成了 fandol 字体库。如果此方法不行，则改用 XeLaTeX 编译，但是加粗字体等操作需要另外设置伪粗体，请您自行上网搜索。若您的系统是苹果系统或者 linux, Ubuntu等系统，并且遇到了如上情况，请自行上网搜索输入中文的方法。
+\end{rmk}
+\begin{rmk}
+若用中文撰写稿件，请不要在 overleaf 里面编辑，因为 overleaf 里面输入中文必须用 CJK 环境，而不是像现在这样直接引用 ctex 宏包就行了。
+\end{rmk}
+
+\subsection{投稿方向}\label{subsect. class}
+
+《蛙鸣》接受如下类型的稿件
+\begin{enumerate}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+\item 数学在科学中的应用、与其它学科的交叉。
+\item 小论文、综述报告。
+\item 研究讨论、前沿介绍。
+\item 对定理、习题的推广、理解、应用。
+\item “揭皇榜”问题解答。
+\item 数学人物采访、数学家传记等。
+\item 讲座、报告、座谈实录。
+\item 数学史、数学科普。
+\item 读书分享、随笔、诗歌等文学类作品。
+\end{enumerate}
+
+\subsection{审稿流程与规范}\label{subsect. review}
+
+《蛙鸣》的审稿机制是\textbf{双盲审稿}，即作者不知道审稿人的身份，审稿人也不知道作者的身份（这也是要求作者在PDF文件里面隐去作者信息的原因）。编辑部收到稿件之后会邮件回复，并及时安排审稿人。审稿人均为科大数院在读学生或已毕业校友；过于专业的稿件，我们会邀请相关方向的老师或外校专家参与审稿。每篇稿件将至少有两位审稿人审稿，编辑部将在2-4周内反馈初审意见，并在三个月内决定是否录用稿件。稿件若被采用，则有稿费若干。
+
+\begin{rmk}
+作者在投稿专业性较强的稿件时，可以建议从事何种方向的审稿人来审稿，以加快审稿速度。
+\end{rmk}
+\begin{rmk}
+审稿人撰写审稿意见时，请先给出审稿结论（接受/小幅修改/大幅修改/拒稿），之后简要叙述稿件内容。此后再叙述文章的优点、缺点，以及有疑问或者需要修改的地方。审稿报告撰写完成之后，请审稿人在文档属性里面删去自己的信息（尤其是使用 word 或者 markdown 撰写时）。
+\end{rmk}
+\begin{rmk}
+审稿人意见搜集完毕后，由编辑部的某一位成员整合审稿意见并决定审稿结果（接受/小幅修改/大幅修改/拒稿）。编辑将充分考虑所有审稿人的意见，但编辑有权力无视部分审稿结论。审稿结果的决定权最终归编辑所有。
+\end{rmk}
+\begin{rmk}
+作者在收到反馈后，需要根据审稿意见作出必要的更改。若审稿意见中有不合理的地方，作者可以依据足够充分的理由来反驳该审稿意见。
+\end{rmk}
+
+\section{书写规范}\label{sect. writting}
+
+稿件的行文书写应力求语句通顺、条理清晰，而非单纯地罗列或堆砌定理和证明。特别地，对数学类稿件而言，作者尽量以自己的语言叙述定理内容和证明，并尽量写出自己的理解。由于稿件篇幅限制，作者应力求内容简明扼要，语句精炼有力，突出重点内容与想法，而部分过于繁琐或是无关紧要的细节可以考虑略去。另外，\textbf{数学符号必须全部在公式环境下输入，不允许在普通的文字环境下输入}。
+
+\subsection{章节的层级}\label{subsect. section}
+
+LaTeX排版时，作者可以通过设置章节的层级，即\texttt{$\backslash$section$\{\cdots\}$}, \texttt{$\backslash$subsection$\{\cdots\}$},\\ \texttt{$\backslash$subsubsection$\{\cdots\}$} 等命令，使得文章的结构层次分明。但请不要超过三级目录，即不超过\\ \texttt{$\backslash$subsubsection} 对应的层级. 注意，若作者不希望给其中某个章节编号，则应把 \texttt{section} 换成 \texttt{section}*.
+
+\subsection{罗列多个要点的方法}\label{subsect. itemize}
+
+当需要并列地叙述多个要点时，作者可以采用\texttt{itemize}或者\texttt{enumerate}的环境。前者是在每个要点之前加一个黑点$\bullet$, 后者则是编号。注意，每个 \texttt{item} 里面可以再插入 \texttt{itemize}或者\texttt{enumerate}. 每个 item 之间的行距也可以通过命令调整。
+
+例如，下面两个代码块体现出来的行距就不一样。先看不加行距设定的。
+
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+\begin{itemize}
+\item 123
+\item 456
+\end{itemize}
+\end{lstlisting}
+
+\begin{itemize}
+\item 123
+\item 456
+\end{itemize}
+
+再看加行距设定的
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+\item 123
+\item 456
+\end{itemize}
+\end{lstlisting}
+
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+\item 123
+\item 456
+\end{itemize}
+
+对\texttt{enumerate}环境可以同理地使用。
+
+\subsection{定理环境}\label{subsect. thm}
+
+数学类稿件的主要结论请用定理叙述，涉及到的中间结论请考虑写成命题或者引理。本模板中，定理、命题、引理、推论、猜想、定义、假设、断言、注记，分别使用 \texttt{thm}, \texttt{prop}, \texttt{lem}, \texttt{cor}, \texttt{conj}, \texttt{defn}, \texttt{assump}, \texttt{claim}, \texttt{rmk} 环境，其中，注记 \texttt{rmk} 环境下是默认不带编号的，否则请自行添加命令。而定理、引理、命题等内容的证明则要求在 \texttt{proof} 环境下输入。举例如下
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+\begin{thm}[Hodge-type decomposition]
+Let $X$ be a smooth vector field and $s\geq 1$. Then the following inequality holds
+\[
+\|X\|_{H^s(\Omega)}\lesssim\|X\|_{L^2(\Omega)}+\|\text{curl }X\|_{H^{s-1}(\Omega)}+\|\text{div }X\|_{H^{s-1}(\Omega)}+|\overline{\p}X\cdot N|_{H^{s-\frac{3}{2}}(\p\Omega)}.
+\]
+\end{thm}
+\begin{proof}
+The inequality follows from the identity $-\Delta X=\text{curl }\text{curl }X-\nabla\text{div }X$.
+\end{proof}
+\end{lstlisting}排版效果为
+\begin{thm}[Hodge-type decomposition]
+Let $X$ be a smooth vector field and $s\geq 1$. Then the following inequality holds
+\[
+\|X\|_{H^s(\Omega)}\lesssim\|X\|_{L^2(\Omega)}+\|\text{curl }X\|_{H^{s-1}(\Omega)}+\|\text{div }X\|_{H^{s-1}(\Omega)}+|\overline{\p}X\cdot N|_{H^{s-\frac{3}{2}}(\p\Omega)}.
+\]
+\end{thm}
+\begin{proof}
+The inequality follows from the identity $-\Delta X=\text{curl }\text{curl }X-\nabla\text{div }X$.
+\end{proof}
+
+\subsection{数学公式的书写}\label{subsect. formula}
+
+数学类稿件中，大量的公式总是难以避免。在此，我们强烈建议不熟悉使用LaTeX的同学阅读本节，或是上网查找相关内容，以避免稿件排版过于难看。在介绍之前，请作者牢记如下几点
+\begin{enumerate}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+\item 公式里面的字母会自动变成斜体，公式环境下不能直接输入中文。
+\item 公式环境下，正体英文字和中文字的输入，可以使用\texttt{$\backslash$text}\{文字\}，但此情况下不会自动换行。
+\item 公式环境下输入空格是无效的。要在公式里面产生空格效果，请根据所需空格的大小输入例如$\backslash$,或 $\backslash$quad 或 $\backslash$qquad 或者波浪线$\sim$ (即 Shift+Tab键上面那个键)。更多这方面的内容请自行上网查询。
+\end{enumerate}
+
+\subsubsection{行间公式}\label{subsubsect. formula}
+
+行间公式，即穿插在文字中间的公式，不单独成行。行间公式主要书写处理较小、较短的公式。但是注意，行间公式的环境下，排版时不会自动换行，从而可能导致公式内容冲出页边距。因此大家一定要注意处理行末尾的公式，必要时候可以使用 $\backslash\backslash$ 强制换行。另一点需要注意的是，如果作者希望将一些复杂的求和式、求极限式、分式写在行间公式中，则需要对LaTeX代码作出必要的调整。例如使用$\backslash$\texttt{dfrac}代替$\backslash$\texttt{frac}, $\backslash$\texttt{sum}$\backslash$\texttt{limits} 代替 $\backslash$\texttt{sum}. 请看下例：
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+We have $\frac{1+\frac{\sqrt{x^2+1}}{x+2}}{x(x^2+100)^{50}}$, $x-\frac{66}{100}$ and $\dfrac{1+\frac{\sqrt{x^2+1}}{x+2}}{x(x^2+100)^{50}}$, $x-\dfrac{66}{100}$. Which one looks better?
+\end{lstlisting}
+
+We have $\frac{1+\frac{\sqrt{x^2+1}}{x+2}}{x(x^2+100)^{50}}$, $x-\frac{66}{100}$ and $\dfrac{1+\frac{\sqrt{x^2+1}}{x+2}}{x(x^2+100)^{50}}$, $x-\dfrac{66}{100}$. Which one looks better?
+
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+We have $\p_t v-\sum_{j=1}^d(\mathbf{F}_j^0\cdot\p)\eta=-\nabla_A q$ and $\p_t v-\sum\limits_{j=1}^d(\mathbf{F}_j^0\cdot\p)\eta=-\nabla_A q$. Which one looks better?
+\end{lstlisting}
+
+We have $\p_t v-\sum_{j=1}^d(\mathbf{F}_j^0\cdot\p)^2\eta=-\nabla_A q$ and $\p_t v-\sum\limits_{j=1}^d(\mathbf{F}_j^0\cdot\p)^2\eta=-\nabla_A q$. Which one looks better?
+
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+We have $\limsup_{n\to\infty} f_n=f$ and $\limsup\limits_{n\to\infty} f_n=f$. Which one looks better?
+\end{lstlisting}
+
+We have $\limsup_{n\to\infty} f_n=f$ and $\limsup\limits_{n\to\infty} f_n=f$. Which one looks better?
+
+\subsubsection{单行公式}\label{subsubsect. single}
+
+单行公式用于处理一些较长的公式，它们往往是一些冗长的积分式或者重要的结论式。一般来说有$\backslash [\cdots\backslash ]$, \texttt{equation}, \texttt{equation*} 三种环境。第一种是针对不编号的公式，第二种是针对要编号的公式（以方便公式的交叉引用）。第三种和第一种是一样的，就不介绍了。请看下例：
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+\[
+E(t)=\|v(t)\|_{H^4(\Omega)}^2+|\overline{\nabla}^{2}\theta(t)|_{L^2(\p\Omega)}^2
+\]
+
+\begin{equation}\label{Euler energy}
+E(t)=\|v(t)\|_{H^4(\Omega)}^2+|\overline{\nabla}^{2}\theta(t)|_{L^2(\p\Omega)}^2
+\end{equation}
+The formula \eqref{Euler energy} gives the energy functional of free-surface incompressible Euler equations.
+\end{lstlisting}
+两种代码的排版结果对应如下：
+\[
+E(t)=\|v(t)\|_{H^4(\Omega)}^2+|\overline{\nabla}^{2}\theta(t)|_{L^2(\p\Omega)}^2
+\]
+
+\begin{equation}\label{Euler energy}
+E(t)=\|v(t)\|_{H^4(\Omega)}^2+|\overline{\nabla}^{2}\theta(t)|_{L^2(\p\Omega)}^2
+\end{equation}
+The formula \eqref{Euler energy} gives the energy functional of free-surface incompressible Euler equations.
+
+可见，后者可以用于公式的交叉引用。当然，\texttt{label}在键入tex文档后，需要先编译过一次，在第二次编译的时候才能被引用。
+
+\subsubsection{多行公式}\label{subsubsect. multiple}
+
+多行公式往往用于书写复杂式子的连续推导过程，其环境设置有如下几种方法
+\begin{enumerate}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+\item 完全不设编号: 此时使用 \texttt{align*} 环境。
+\item 整个公式块设置一个编号: 此时\textbf{在 \texttt{equation} 环境下}使用 \texttt{aligned} 环境。
+\item 需要给多行甚至每一行设置编号: 此时使用 \texttt{align} 环境，并在不需要编号的那一行末尾\\ 加入$\backslash$\texttt{nonumber}.
+\item 多行公式中，请尽量保证括号大小与公式大小匹配。若左右括号出现在同一行内，则分别在它们前面加$\backslash$\texttt{left} 和 $\backslash$\texttt{right}. 若是跨行出现，则需要自己调整大小（在括号前面加类似于 $\backslash$\texttt{bigg} 的指令）
+\end{enumerate}
+\begin{rmk}
+多行公式中，请使用 \& 符号进行对齐以标注对齐的位置，每行放置一个。然后使用$\backslash\backslash$换行。
+\end{rmk}
+请看下例
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+\begin{align}
+\label{IB1} IB=&-\sum_{L=1}^2\int_{\Gamma} \hat{A}^{3i} N_3\p_3^4Q\,\p_3^4\eta_p\,A^{Lp}\TP_l v_i\\
+\label{IB2} &-\sum_{L=1}^2 \int_{\Gamma} N_3J\p_3^4Q\left(\sum_{M=1}^2A^{Lp}\p_3^3\p_M\eta_p\,A^{Mi}+[\p_3^2,A^{Lp}A^{mi}]\p_3\p_m\eta_p\right)\\
+ =&-IB'-\sum_{L=1}^2 \int_{\Gamma} N_3J\p_3^4Q\left(\sum_{M=1}^2A^{Lp}\p_3^3\p_M\eta_p\,A^{Mi}+[\p_3^2,A^{Lp}A^{mi}]\p_3\p_m\eta_p\right). \nonumber
+\end{align}
+\end{lstlisting}
+
+排版如下
+\begin{align}
+\label{IB1} IB=&-\sum_{L=1}^2\int_{\Gamma} \hat{A}^{3i} N_3\p_3^4Q\,\p_3^4\eta_p\,A^{Lp}\p_L v_i\\
+\label{IB2} &-\sum_{L=1}^2 \int_{\Gamma} N_3J\p_3^4Q\left(\sum_{M=1}^2A^{Lp}\p_3^3\p_M\eta_p\,A^{Mi}+[\p_3^2,A^{Lp}A^{mi}]\p_3\p_m\eta_p\right)\\
+ =&-IB'-\sum_{L=1}^2 \int_{\Gamma} N_3J\p_3^4Q\left(\sum_{M=1}^2A^{Lp}\p_3^3\p_M\eta_p\,A^{Mi}+[\p_3^2,A^{Lp}A^{mi}]\p_3\p_m\eta_p\right). \nonumber
+\end{align}
+
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+\begin{equation}\label{IB}
+\begin{aligned}
+ IB=&-\sum_{L=1}^2\int_{\Gamma} \hat{A}^{3i} N_3\p_3^4Q\,\p_3^4\eta_p\,A^{Lp}\TP_l v_i\\
+&-\sum_{L=1}^2 \int_{\Gamma} N_3J\p_3^4Q\left(\sum_{M=1}^2A^{Lp}\p_3^3\p_M\eta_p\,A^{Mi}+[\p_3^2,A^{Lp}A^{mi}]\p_3\p_m\eta_p\right).
+\end{aligned}
+\end{equation}
+\end{lstlisting}
+
+排版如下
+\begin{equation}\label{IB}
+\begin{aligned}
+IB=&-\sum_{L=1}^2\int_{\Gamma} \hat{A}^{3i} N_3\p_3^4Q\,\p_3^4\eta_p\,A^{Lp}\p_L v_i\\
+&-\sum_{L=1}^2 \int_{\Gamma} N_3J\p_3^4Q\left(\sum_{M=1}^2A^{Lp}\p_3^3\p_M\eta_p\,A^{Mi}+[\p_3^2,A^{Lp}A^{mi}]\p_3\p_m\eta_p\right).
+\end{aligned}
+\end{equation}
+
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+\begin{align*}
+ IB=&-\sum_{L=1}^2\int_{\Gamma} \hat{A}^{3i} N_3\p_3^4Q\,\p_3^4\eta_p\,A^{Lp}\TP_l v_i\\
+&-\sum_{L=1}^2 \int_{\Gamma} N_3J\p_3^4Q\left(\sum_{M=1}^2A^{Lp}\p_3^3\p_M\eta_p\,A^{Mi}+[\p_3^2,A^{Lp}A^{mi}]\p_3\p_m\eta_p\right).
+\end{align*}
+\end{lstlisting}
+
+排版如下
+\begin{align*}
+IB=&-\sum_{L=1}^2\int_{\Gamma} \hat{A}^{3i} N_3\p_3^4Q\,\p_3^4\eta_p\,A^{Lp}\p_L v_i\\
+&-\sum_{L=1}^2 \int_{\Gamma} N_3J\p_3^4Q\left(\sum_{M=1}^2A^{Lp}\p_3^3\p_M\eta_p\,A^{Mi}+[\p_3^2,A^{Lp}A^{mi}]\p_3\p_m\eta_p\right).
+\end{align*}
+
+\subsubsection{方程组}\label{subsubsect. equ}
+
+方程组的输入方法有两种，一种是在公式环境下引入\texttt{cases}环境，另一种则是手动打大括号然后在\texttt{aligned}环境下输入。使用后者时，请注意不要漏掉末尾的$\backslash$\texttt{right.}！
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+\begin{equation}\label{Euler}
+\begin{cases}
+\p_t u+(u\cdot\nabla) u=-\nabla p   &\text{ in }\Omega \\
+\text{div }u=0 &\text{ in }\Omega \\
+u\cdot N=0 &\text{ on }\p\Omega 
+\end{cases}
+\end{equation}
+
+\begin{equation}\label{Euler2}
+\left\{
+\begin{aligned}
+\p_t u+(u\cdot\nabla) u=-\nabla p   &\text{ in }\Omega \\
+\text{div }u=0 &\text{ in }\Omega \\
+u\cdot N=0 &\text{ on }\p\Omega 
+\end{aligned}\right.
+\end{equation}
+\end{lstlisting}
+排版出来的效果是一样的
+\begin{equation}\label{Euler2}
+\left\{
+\begin{aligned}
+\p_t u+(u\cdot\nabla) u=-\nabla p   &\text{ in }\Omega \\
+\text{div }u=0 &\text{ in }\Omega \\
+u\cdot N=p=0 &\text{ on }\p\Omega 
+\end{aligned}\right.
+\end{equation}
+
+\subsubsection{矩阵与行列式}\label{subsubsect. matrix}
+
+矩阵则需要在公式环境下输入。无边框、小括号边框、中括号边框、大括号边框、绝对值边框（行列式）、双竖线边框所需的环境分别是 \texttt{matrix}, \texttt{pmatrix}, \texttt{bmatrix}, \texttt{Bmatrix}, \texttt{vmatrix}, \texttt{Vmatrix}. 输入矩阵时，请使用 \& 字符来对齐各行各列，每个间隔处都需要一个 \&. 换行请使用$\backslash\backslash$. 另外, LaTeX默认的矩阵最大行列数是10行10列，需要更大矩阵的话，则要在输入矩阵之前加入命令 \\ $\backslash$\texttt{setcounter\{MaxMatrixCols\}\{所需行列数\}}. 举例如下
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+\[
+\begin{bmatrix}
+1 & 1 & 4 & & & &\\
+5 & 1 & 4 & & & &\\
+  &   &   & 1& 9 & 1 &9\\
+  &   &   & & 8 & 1 &0
+\end{bmatrix}
+\]
+\end{lstlisting}
+\[
+\begin{bmatrix}
+1 & 1 & 4 & & & &\\
+5 & 1 & 4 & & & &\\
+  &   &   & 1& 9 & 1 &9\\
+  &   &   & & 8 & 1 &0
+\end{bmatrix}.
+\]
+
+\subsubsection{交换图表}\label{subsubsect. tikz}
+
+本模板中只引入了tikz宏包来绘制交换图表，如果需要更复杂的，请作者自己加命令。绘制交换图表的基本教程不再于此叙述，大家可以自己上网搜。此处仅是举个例子， \& 仍然是用于对齐和控制位置, arrow是指箭头, u, d, l, r分别是指箭头的上、下、左、右方向。
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+\begin{equation}
+\begin{tikzcd}
+ &   \|\p_t^2 h\|_2\arrow[r]\arrow[dr]&\|\p_t^4 h\|_0\\
+\|h\|_4\arrow[ur]\arrow[dr] &  & \sum\limits_{j=1}^3\|(\mathbf{F}_j^0\cdot\p)^2\p_t^2 h\|_0\\
+ & \sum\limits_{j=1}^3 \|(\mathbf{F}_j^0\cdot\p)^2 h\|_2\arrow[r]\arrow[ur] & \sum\limits_{j,k=1}^3\|(\mathbf{F}_k^0\cdot\p)(\mathbf{F}_j^0\cdot\p)^2 h\|_0.
+\end{tikzcd}
+\end{equation}
+\end{lstlisting}
+排版示例：
+\begin{equation}
+\begin{tikzcd}
+ &   \|\p_t^2 h\|_2\arrow[r]\arrow[dr]&\|\p_t^4 h\|_0\\
+\|h\|_4\arrow[ur]\arrow[dr] &  & \sum\limits_{j=1}^3\|(\mathbf{F}_j^0\cdot\p)^2\p_t^2 h\|_0\\
+ & \sum\limits_{j=1}^3 \|(\mathbf{F}_j^0\cdot\p)^2 h\|_2\arrow[r]\arrow[ur] & \sum\limits_{j,k=1}^3\|(\mathbf{F}_k^0\cdot\p)(\mathbf{F}_j^0\cdot\p)^2 h\|_0.
+\end{tikzcd}
+\end{equation}
+
+\subsection{表格与图片}\label{subsect. chart}
+
+\subsubsection{插入表格}
+原则上，我们要求表格的位置是居中的。表格自身应在 \texttt{tabular} 环境下输入，并用 l, c, r控制各列的左右对齐，用竖线 $|$, 双竖线 $||$, 横线 $\backslash$hline, 双横线 $\backslash$hline$\backslash$hline来绘制中间的线条, \& 控制对齐, 使用$\backslash\backslash$换行。我们要求表格下面加注记，这可以用$\backslash$\texttt{caption}\{...\} 在table环境下完成。示例如下：
+\begin{lstlisting}[language=TeX,breaklines=true,basicstyle=\tt\scriptsize] 
+begin{table}[h]	
+	\centering{
+	\begin{tabular}{| l | c | c | c || r |}
+		\hline
+		Name & Subject 1 & Subject 2 & Subject 3 & Total\\
+		\hline
+		Name 1 & 123 & 117 & 139 & 379 \\
+		\hline
+		Name 2 & 107 & 147 & 128 & 382 \\
+		\hline
+		Name 3 & 116 & 142 & 135 & 393 \\
+		\hline
+	\end{tabular}
+	\caption{grade}
+}
+\end{table}
+\end{lstlisting}
+
+\begin{table}[h]	
+	\centering{
+	\begin{tabular}{| l | c | c | c || r |}
+		\hline
+		Name & Subject 1 & Subject 2 & Subject 3 & Total\\
+		\hline
+		Name 1 & 123 & 117 & 139 & 379 \\
+		\hline
+		Name 2 & 107 & 147 & 128 & 382 \\
+		\hline
+		Name 3 & 116 & 142 & 135 & 393 \\
+		\hline
+	\end{tabular}
+	\caption{grade}
+}
+\end{table}
+
+\subsubsection{插入图片}
+
+插入图片的方法与表格类似，只不过是将table换成figure, 插入图片的命令为
+\begin{center}
+$\backslash$includegraphics[尺寸信息]\{文件位置\}
+\end{center}
+同样，我们要求图片也是居中的（除特殊情况），在 $\backslash$includegraphics 外面套上一层居中的命令就可以完成。
+
+\subsection{程序代码}\label{subsect. code}
+
+程序代码的插入需要用 listings 宏包, 在 \texttt{lstlisting}环境下键入代码. 注意，在 $\backslash$begin\{lstlisting\} 要加中括号里面选择程序所需的语言、关键字颜色、字体等等。如果全文只用一种程序代码，则可以在 $\backslash$begin\{document\} 之前用 $\backslash$lstset 全局定义. 具体可以参见本文件的源代码或者自己上网搜。
+
+\subsubsection{交叉引用}\label{subsect. hyperref}
+
+公式、方程等交叉引用方法在之前的代码里面有所体现。一般来说我们需要 hyperref 宏包，该宏包的位置不能乱放，否则可能和其他的冲突(尤其是 graphicx)，公式的引用一般使用 $\backslash$eqref\{被引用公式的label名称\}. 章节的引用则是 $\backslash$ref\{被引用公式的label名称\} （以避免出现括号）.
+
+\section{参考文献及其引用规范}\label{sect. cite}
+
+\subsection{参考文献生成方式}\label{subsect. bib}
+
+参考文献的生成方式有多种。一种是像本文件一样直接在文档末尾的 thebiliography 环境下依次输入所需的参考文献。另一种方法是用.bib文件生成.bbl文件，再把 .bbl 文件里面的东西复制到文档末尾的 thebiliography 环境下。最后一种方法就是直接从 .bib 文件产生参考文献，此时只需在文档末尾加入 $\backslash$bibliography\{ .bib文件的名字\} 便可生成。
+
+第一种方式的好处就是只需要编译两次即可更新所有的引用。后两种方式的好处是不需要自己手动排序，但每次更新 .bib文件的之后，都需要先用 BibTeX 编译一次，再用 pdfLaTeX 或者 XeLaTeX 编译两次才能更正。
+
+\subsection{引用文献的格式要求}\label{subsect. cite}
+
+我们对参考文献及其引用格式的要求如下
+\begin{enumerate}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+\item 参考文献的顺序必须按第一作者的姓氏来排序，中文参考文献可以放最后（如果是.bib自动生成的话）。
+\item 英文的作者名请简写为“姓氏，名字第一个字母”，例如``Wu Sijue" 写成 ``Wu, S.", 有连词符的情况则保留每一段的第一个字母，例如 ``Chen Gui-Qiang" 写成 ``Chen, G.-Q.", 中文的请保留全名。
+\item 文章标题紧接在作者名后。此后用斜体输入期刊名，再用默认字体输入卷号(Vol), 期号(Issue), 页码(pages), 发表年份 (year).
+\item 参考文献的引用格式为:
+\begin{enumerate}
+\item 多个作者并列时，请用 - 连接，例如: Christodoulou-Lindblad \cite{CL2000} 首先给出了带旋度的自由边界不可压欧拉方程的先验估计.
+\item 多个参考文献并列时，请不要分开写，而且写在一个 $\backslash$cite\{...\} 命令里面。例如: 自由边界无粘流体的首个重大突破是华人数学家邬似珏 \cite{wu1997,wu1999} 于1997、1999年证明的二维、三维不可压无旋重力水波系统的适定性。
+\item 需要特指参考文献的某一部分时，请在$\backslash$cite 和大括号\{...\} 之间加入中括号。例如 Christodoulou-Lindblad \cite[Proposition 5.8]{CL2000}. 对应的代码为 $\backslash$\texttt{cite[Proposition 5.8]\{CL2000\}}.
+\item 中文参考文献引用时，请保留作者全名，不要用 - 连接人名。例如：在常庚哲、史济怀所著的 \cite{sjh1} 中，有这样一个定理。
+\end{enumerate}
+\end{enumerate}
+
+\begin{thebibliography}{99}% 可以直接在thebibliography的环境下键入参考文献，也可以使用.bib文件并将其生成的.bbl文件里面的内容复制进来。
+\bibitem{CL2000}
+Christodoulou, D., Lindblad, H.
+\newblock On the motion of the free surface of a liquid.
+\newblock {\em Comm. Pure Appl. Math.}, 53(12), 1536-1602, 2000.
+
+\bibitem{wu1997}
+Wu, S.
+\newblock Well-posedness in Sobolev spaces of the full water wave problem in 2-D.
+\newblock {\em Invent. Math.}, 130(1), 39--72, 1997.
+
+\bibitem{wu1999}
+Wu, S.
+\newblock Well-posedness in Sobolev spaces of the full water wave problem in 3-D.
+\newblock {\em J. Amer. Math. Soc.}, 12, 445-495, 1999.
+
+\bibitem{sjh1}
+常庚哲、史济怀.
+\newblock {\em 《数学分析教程》第三版·上册}.
+\newblock 中国科学技术大学出版社, 2008.
+\end{thebibliography}
+
+%\bibliography{References}  也可以直接用.bib来排版，这需要用BibTeX编译一次之后再用pdfLaTeX编译一次或者两次（如果涉及到脚注页码变更）。
+
+\end{document}

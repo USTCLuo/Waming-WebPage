@@ -1,0 +1,571 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--注释可以写在这样一对括号中，.css文件中的注释由/* */包围起来-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href=" css/star.css"><!--指定我们用的css文件在css/star.css，它指定了网页的样式，样式可以进行叠加，不同的指定样式的方式、它们的优先级见https://www.runoob.com/css/css-howto.html-->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script><!--插入JavaScript-->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true
+        },
+        svg: {
+            fontCache: 'global'
+        }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <title>蛙鸣</title>
+    <style>
+        body {
+            line-height: 180%;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Back to Top">返回顶部</button><!--JavaScript返回顶部按钮,参看https://www.runoob.com/w3cnote/js-to-top.html-->
+    <div class=" box">
+        <div style=" text-align :center">
+            <img class=" pic3" src="pu/image/title.jpg" alt=" 蛙鸣" />
+            <div style=" padding:15px;">
+                <span class=" time"></span>
+                <div style=" line-height:150%">
+                    中国科大学生数学杂志<br />
+                    1981.6.20 - 2025.6.26<br />
+                    愿我们一同见证一代中国科大人的成长
+                </div>
+                <span class=" time"></span>
+            </div>
+
+            <img style=" max-width :100%; width: 500px;" src="pu/image/heading67.png" alt="四十周年纪念刊第64期《蛙鸣》发布！" />
+            <br />
+            <br />
+            <div style=" text-align: center">
+                <!--#electronic参考id选择器https://www.runoob.com/css/css-id-class.html-->
+                <!--onclick事件是指定点击这个按钮后发生什么，这里是展开后面的折叠栏-->
+                <a class="badge" href="#electronic" onclick="$(function () { $('#collapseOne').collapse('show')});">第67期电子版</a>
+                <a class="badge" href="#corrections" onclick="$(function () { $('#collapseFive').collapse('show')});">勘误修订</a>
+                <a class="badge" href="#solution" onclick="$(function () { $('#collapseSix').collapse('show')});">悬赏征解</a>
+                <a class="badge" href="#history" onclick="$(function () { $('#collapseFour').collapse('show')});">往期阅览</a>
+                <a class="badge" href="#contact" onclick="$(function () { $('#collapseThree').collapse('show')});">联系我们</a>
+            </div>
+        </div>
+        <br />
+
+        <div class="panel-group" id="accordion">
+            <!--一个折叠栏模块，参考https://www.runoob.com/bootstrap/bootstrap-collapse-plugin.html-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapseThree"><!--折叠栏编号-->
+                            投稿须知 - 第68期征稿中<!--折叠栏标题-->
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse in">
+                    <div class="panel-body"><!--一个折叠栏内容-->
+                        <b>投稿邮箱：</b><a title=" 点击并邮件联系我们" href=" mailto:&#109&#97&#116&#104&#115&#117&#48&#49&#64&#117&#115&#116&#99&#46&#101&#100&#117&#46&#99&#110"<!--ASCII码写邮箱地址防止批量抓取-->mathsu01(at)ustc.edu.cn</a>，第68期征稿中，预计2026年6月发布.<br />
+
+                        <b>详细信息：</b><a href=" file/Warming_submission_guidelines.pdf">投稿须知</a>，稿件若含数学公式则需使用我们的：
+                        <a href=" file/Warming_chinese_template.zip">LaTeX模版</a>.<br />
+
+                        <a id="contact"> </a>
+                        <b>联系我们：</b>致信上述邮箱 或 中国科大数院学生会QQ公众号 <a title=" 点击获取QQ二维码" href=" image/code.jpg">2061453364</a>（蜗壳的书院）.
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default"><!--另一个折叠栏模块-->
+                <div class="panel-heading">
+                    <a id="electronic"> </a>
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapseOne">
+                            刊物发布
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <b><a href="#pic">点击下方图片</a>下载各期蛙鸣，点击链接查看<a href="#history" onclick="$(function () { $('#collapseFour').collapse('show')});">往期蛙鸣.</a></b><br />
+                        <br />
+                        <div style="margin:auto">
+                            <div class="responsive">
+                                <div class="img" id="pic">
+                                    <a target="_blank" href="pu/pdf/Warming_67(2025.07).pdf">
+                                        <img class=" pic4" src="pu/image/67.jpg" alt="点击下载第67期《蛙鸣》" width="180" height="250" />
+                                    </a>
+                                    <div class="desc">
+                                        第67期（2025）<br />
+                                        <a title="点击查阅第67期文章目录" href="#content67" onclick="$(function () { $('#collapseTwo').collapse('show')});">文章目录</a>
+                                        <a title="点击查阅第67期的勘误与增补" href="#corrections" onclick="$(function () { $('#collapseFive').collapse('show')});">勘误修订</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="responsive">
+                                <div class="img" id="pic">
+                                    <a target="_blank" href="pu/pdf/Warming_66(2023.07).pdf">
+                                        <img class=" pic4" src="pu/image/66.jpg" alt="点击下载第66期《蛙鸣》" width="180" height="250" />
+                                    </a>
+                                    <div class="desc">
+                                        第66期（2023）<br />
+                                        <a title="点击查阅第66期文章目录" href="#content66" onclick="$(function () { $('#collapseTwo').collapse('show')});">文章目录</a>
+                                        <a title="点击查阅第66期的勘误与增补" href="#corrections" onclick="$(function () { $('#collapseFive').collapse('show')});">勘误修订</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="responsive">
+                                <div class="img" id="pic">
+                                    <a target="_blank" href="pu/pdf/Warming_65(2022.06).pdf">
+                                        <img class=" pic4" src="pu/image/65.jpg" alt="点击下载第65期《蛙鸣》" width="180" height="250" />
+                                    </a>
+                                    <div class="desc">
+                                        第65期（2022）<br />
+                                        <a title="点击查阅第65期文章目录" href="#content65" onclick="$(function () { $('#collapseTwo').collapse('show')});">文章目录</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="responsive">
+                                <div class="img">
+                                    <a target="_blank" href="pu/pdf/Warming_64(2021.06).pdf">
+                                        <img class=" pic4" src="pu/image/64.jpg" alt="点击下载第64期《蛙鸣》" width="180" height="250" />
+                                    </a>
+                                    <div class="desc">
+                                        第64期（2021）<br />
+                                        <a title="点击查阅第64期文章目录" href="#content64" onclick="$(function () { $('#collapseTwo').collapse('show')});">文章目录</a> 
+                                        <a title="点击查阅第64期的勘误与增补" href="#corrections" onclick="$(function () { $('#collapseFive').collapse('show')});">勘误修订</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <br /> -->
+                        </div>
+                        <!-- <br /> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a id="corrections"> </a>
+                        <a data-toggle="collapse" href="#collapseFive">
+                            勘误修订（点击展开）
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <b>第67期《诗词三首-水调歌头》</b>
+                        <br />“星<b>楼</b>空泛”更正为“星<b>槎</b>空泛”，“剩借<b>转</b>鹏羽翼”改为“剩借<b>抟</b>鹏羽翼”</a>.<br />
+                    </div>
+                    <div class="panel-body">
+                        <b>第66期《流体自由边界问题 (三) ——Beale-Kato-Majda 爆破准则》</b>
+                        <br />更正文中关于全空间中欧拉方程解的论述：定理1.2下方的注记中，Zlatos所得的结果是在二维环面上，Kiselev-Sverak的结果只对单连通有界区域正确，无界区域情况目前完全未知。
+                    </div>
+                    <div class="panel-body">
+                        <b>第64期《从正多边形中的有理比到tan(π/n)的极小多项式》</b>
+                        <br />更正文中的猜想8.5-8.7，增加前人有关工作的信息：<a href=" pdf/correction.pdf" title="点击下载">补充与更正</a>. 详细信息参见：<a href="#solution" onclick="$(function () { $('#collapseSix').collapse('show')});">悬赏征解</a>.<br />
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a id="catalogue"> </a>
+                        <a data-toggle="collapse" href="#collapseTwo">
+                            文章目录（点击展开）
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body" style=" padding:20px;">
+
+                        <a id="content67"> </a>
+                        <b>蛙鸣第67期</b><br />
+                        2025.7.6<br />
+                        <br />
+                        <b>1、初阳</b><br />
+                        Roth定理的遍历论证明<br />
+                        A study on the Moment of Order Statistics<br />
+                        随机微分方程在生物群落演化中的应用<br />
+                        <br />
+                        <b>2、蛙声一片</b><br />
+                        有理角余弦比值的次数<br />
+                        无粘流体的低马赫数奇异极限<br />
+                        林开亮提出的一个问题<br />
+                        <br/>
+                        <b>3、笔墨诗篇</b><br />
+                        诗词三首<br />
+                        <br />
+                        <b>4、皇榜</b><br />
+                        皇榜 ● 征解<br />
+                        <br />
+                        <div style=" text-align :center;">
+                            <img class="picflower" src="pu/image/decoration.jpg" alt=" Decoration" />
+                        </div>
+                        
+                        <a id="content66"> </a>
+                        <b>蛙鸣第66期</b><br />
+                        2023.7.26<br />
+                        <br />
+                        <b>1、初阳</b><br />
+                        从 (xIn-A) 的列变换矩阵求 A 的标准型基底<br />
+                        一个常微分方程初值问题的最大存在区间分析<br />
+                        Borsuk-Ulam定理的组合应用<br />
+                        <br />
+                        <b>2、蛙声一片</b><br />
+                        Two Compact Hausdorff Spaces are Homeomorphic If and Only If Their Continuous Function Spaces are Isometrically Isomorphic<br />
+                        微分方程在期权定价问题中的应用<br />
+                        流体自由边界问题 (三) —— Beale-Kato-Majda爆破准则<br />
+                        The Control of Geometric Quantities Under Scalar Curvature Conditions and Rigidity Phenomena<br />
+                        <br/>
+                        <b>3、笔墨诗篇</b><br />
+                        词四首<br />
+                        <br />
+                        <b>4、皇榜</b><br />
+                        皇榜第三期第 2 题解答<br />
+                        <br />
+                        <div style=" text-align :center;">
+                            <img class="picflower" src="pu/image/decoration.jpg" alt=" Decoration" />
+                        </div>
+
+                        <a id="content65"> </a>
+                        <b>蛙鸣第65期</b><br />
+                        2022.6.26<br />
+                        <br />
+                        <b>1、初阳</b><br />
+                        Isoperimetric Inequality: Its Origin, Proof and Development<br />
+                        RSA及素性检测简介<br />
+                        环带多胞体及其关联定向拟阵<br />
+                        <br />
+                        <b>2、星辰</b><br />
+                        What is a Motive? (翻译稿)<br />
+                        <br />
+                        <b>3、蛙声一片</b><br />
+                        流体自由边界问题(二)——涡片解的存在性与稳定性<br />
+                        波方程局部适定性简介<br />
+                        球对称时空的引力坍缩<br />
+                        An Introduction to Hilbert's 19th Problem<br />
+                        主丛介绍<br />
+                        紧阿贝尔群上最小扩张集的稳定性定理的新证明<br />
+                        Zariski主定理和形式理论<br />
+                        场论中的对称与拓扑<br />
+                        Calabi's Program and Stability Theory<br />
+                        <br />
+                        <b>4、笔墨诗篇</b><br />
+                        诗词四首<br />
+                        浣溪沙九首<br />
+                        <br />
+                        <b>5、皇榜</b><br />
+                        皇榜第二期题目解答<br />
+                        皇榜•征解<br />
+                        <br />
+                        <div style=" text-align :center;">
+                            <img class="picflower" src="pu/image/decoration.jpg" alt=" Decoration" />
+                        </div>
+                        <br />
+                        <a id="content64"> </a>
+                        <b>蛙鸣40周年纪念&nbsp;&nbsp;第64期</b><br />
+                        1981.6.20 – 2021.6.20<br />
+                        <br />
+                        <b>1、蛙鸣记忆</b><br />
+                        <br />
+                        <b>2、初阳</b><br />
+                        关于介值性的思考<br />
+                        使用松弛法求解带有Dirichlet边界条件的矩形区域上的Poisson方程问题<br />
+                        <br />
+                        <b>3、星辰</b><br />
+                        暖阳中生长——采访叶向东院士<br />
+                        “浪迹天涯的师兄们”座谈实录<br />
+                        怎样做数学？(翻译稿)<br />
+                        从正多边形中的有理比到tan(π/n)的极小多项式——纪念杨武之先生(1896–1973)诞辰125周年<br />
+                        <br />
+                        <b>4、蛙声一片</b><br />
+                        图论科普<br />
+                        同调群与上同调群的几何解释<br />
+                        流体自由边界问题（一）——理想流体和水波<br />
+                        Brunn-Minkowski不等式<br />
+                        一道丘赛题的解答与推广<br />
+                        Laplace特征函数零点集与丘成桐猜想<br />
+                        例子与分类定理<br />
+                        算术函数的震荡定理<br />
+                        遍历定理<br />
+                        内接正方形问题和内接矩形问题<br />
+                        <br />
+                        <b>5、笔墨诗篇</b><br />
+                        诗四篇<br />
+                        <br />
+                        <b>6、皇榜</b>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a id="solution"> </a>
+                        <a data-toggle="collapse" href="#collapseSeven">
+                            悬赏征解（点击展开）
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseSeven" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <a id = "question 67"></a>
+                        <b>67期</b><br/>
+                        <p>本题的目标是通过Lindeberg替换术来证明一类随机矩阵的经验谱分布收敛至半圆律分布。具体来说，考虑如下矩阵模型：</p>
+                        <p>令 \( X_N \) 为 \( N \times N \) 随机矩阵,设他的特征值从大到小排列分别为 \( \lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_N \)。定义它的经验谱分布为
+                            \[
+                                \mu_{X_N} = \frac{1}{N} \sum_{i=1}^N \delta_{\lambda_i}.
+                            \]</p>
+                        <p>我们假设 \( X_N \) 是对称矩阵，所有元素均为实值随机变量，上三角元素 \( \{X_{ij}\}_{i \leq j} \) 相互独立，均值为0，方差为1，且满足"矩阵Lindeberg条件"：
+                            \[
+                                \forall \epsilon > 0, \quad \lim_{N \to +\infty} \frac{1}{N^2} \sum_{1 \leq i \le j \leq N} \mathbb{E}\left[ X_{ij}^2 \mathbb{1}_{|X_{ij}| > \epsilon \sqrt{N}} \right] = 0.
+                            \]</p>
+                        <p>对于 \( X_N \)，我们的目标是证明：当矩阵维数 \( N \to +\infty \) 时，\(X_N\)的经验谱分布（这是一列随机概率测度，视为取值于 \( \mathcal{Pr}(\mathbb{R}) \) 的随机变量）\(\mu_{X_N}\)弱依概率收敛到Wigner半圆律分布
+                            \[
+                                \rho_{\mathrm{sc}}(x) = \frac{1}{2\pi} \sqrt{4 - x^2}, \quad -2 \leq x \leq 2.
+                            \]</p>
+                        <p>详解见<a href = "pu/pdf/Warming_67(2025.07).pdf">《蛙鸣第67期》</a></p>
+                        <br/>
+                        <div style=" text-align :center;">
+                            <img class="picflower" src="pu/image/decoration.jpg" alt=" Decoration" />
+                        </div>
+                        <br/>
+                        <a id = "question 65"> </a>
+                        <b>65期</b><br/>
+                        1. 设 \( F(x_1,x_2,x_3,x_4) \in \mathbb{C}[x_1,x_2,x_3,x_4] \) 是一个 4 次齐次不可约多项式。记\[J = (F_{x_1}, F_{x_2}, F_{x_3}, F_{x_4})\]为偏导数 \( F_{x_1}, F_{x_2}, F_{x_3}, F_{x_4} \) 生成的理想，\( J \) 中 \( d \) 次齐次多项式集合记作 \( J_d , \mathbb{C}[x_1,x_2,x_3,x_4] \)中 \( d \) 次齐次多项式集合记作 \( V_d \).
+                        假设方程组
+                                \[
+                                    F = F_{x_1} = F_{x_2} = F_{x_3} = F_{x_4} = 0
+                                \]
+                        没有非平凡解(除了 0 点无解),用代数几何语言是\(F\)在 \( \mathbb{P}^3 \) 中定义的超曲面是光滑的。
+                        <br/>(1) 证明：方程组 \( F = F_{x_1} = F_{x_2} = F_{x_3} = F_{x_4} = 0 \) 没有非平凡解;
+                        <br/>(2) 计算 \( \dim V_d \);
+                        <br/>(3) 由 Hilbert 零点定理可知，对充分大的 \( n \)，有 \( V_n = J_n \)。请找一个 \( n \)（不依赖于 \( F \)）使得对所有有 \( d > n \)，有 \( V_d = J_d \)；
+                        <br/>(4) 若存在 \( G,H \in V_4 \)，满足 \( G^2,H^2 \in J_8 \),\( G \cdot H \notin J_8 \)。猜想：存在线性变换 \( T \) 与二元多项式 \( U,V \)，满足 \( [x_1,x_2,x_3,x_4] \mapsto [y_1,y_2,y_3,y_4]T \)，且 \( F(x_1,x_2,x_3,x_4) = U(y_1,y_2) + V(y_3,y_4) \)。
+                        <br/><br/>
+                        2. 考虑n阶随机矩阵 \( M_n = (a_{ij})_{1 \leq i,j \leq n} \)，其中 \( P(e_{ij} = 1) = P(e_{ij} = -1) = 1/2 \)，且所有分量独立。本题的目的是证明一个关于估计 \( \det M_n \) 的猜想。
+                        <br/>(1) 证明：\( \mathbb{E}[(\det M_n)^2] = n! \);
+                        <br/>(2) 证明：对于任意的函数 \( f(n) \)，若 \( \lim_{n \to \infty} f(n) = \infty \)，则 \( \lim_{n \to \infty} \mathbb{P}(|\det M_n| \leq f(n)\sqrt{n!}) = 1 \)；
+                        <br/>(3) 设\(X\)是 \( M_n \) 的第一列，\( W \) 是 \( M_n \) 的第 \( 2, \dots, d+1 \) 列张成的线性子空间，其中 \( 1 \leq d \leq n-4 \)，\( n \) 充分大。记 \( d(X,W) \) 表示 \( n \) 维 Euclid 空间中向量 \( X \) 对应的点到子空间 \( W \) 的距离。证明：\( \forall t > 0 \)，
+                                \[
+                                    \mathbb{P}(|d(X,W) - \sqrt{n-d}| \leq t+1) \leq 4 \exp(-t^2/16)
+                                \]
+                        <br/>(4) 证明：\( \lim_{n \to \infty} \mathbb{P}(|\det M_n| \geq g(n)\sqrt{n!}) = 1 \)，其中 \( g(n) = \exp(-29\sqrt{n\log n}) \)；
+                        <br/>(5) 证明：\( |\det M_n| = n^{n(1/2-o(1))} \) a.s. 成立，其中 \( o(1) \) 表示 \( n \to \infty \) 时的无穷小量。
+                        <br/><br/>
+                        3. 设 \( A_0, A_1, \dots, A_m \) 是 \( \mathbb{C} \) 上 \( m+1 \) 个 \( n \) 阶方阵（\( m \geq 2 \)），满足
+                                \[
+                                    A_0 A_i - A_i A_0 = A_{i+1}, \quad A_0 A_m = A_m A_0, \quad A_j A_k = A_k A_j
+                                \]
+                        对所有的 \( 1 \leq i \leq m-1, 1 \leq j ,k\leq m \) 都成立。若 \( A_{m} \ne O \)，求 \( n \) 的最小值（写成关于 \( m \) 的多项式）。
+                        <br/><br/>
+                        4. \( M_n(\mathbb{C}) \) 为所有 \( n \) 阶复方阵构成的线性空间。
+                        <br/>(1) 设 \( M \) 是 \( M_n(\mathbb{C}) \) 的子空间，定义：\( N = \{ A \in M_n(\mathbb{C}) \mid AB - BA \in M, \forall B \in M \} \)。若 \( A \in N \)，且 \( \mathrm{tr} AB = 0 \)，\( \forall B \in N \)。证明：\( A \) 是幂零方阵。
+                        <br/>(2) 设 \( M_1\subset M_2 \) 是 \( M_n(\mathbb{C}) \) 的两个子空间，定义：\( N = \{ A \in M_n(\mathbb{C}) \mid AB - BA \in M_1, \forall B \in M_2 \} \)。若 \( A \in N \)，且 \( \mathrm{tr} AB = 0 \)，\( \forall B \in N \)。证明：\( A \) 是幂零方阵。
+                        <br/>
+                        5. 设 $\Omega \subset \mathbb{R}^2$ 为一个区域且 $u(x,t) \in L_{\mathrm{loc}}^1(\Omega \times (0,1)) \setminus \Gamma$ 为以下方程的一个非负解
+                                \[
+                                \frac{\partial u}{\partial t} = \Delta u, \quad \forall (x,t) \in (\Omega \times (0,1)) \setminus \Gamma,
+                                \]
+                        其中 $\Gamma = \{(\xi(t),t) \mid t \in (0,1)\}$，且 $\xi: [0,1] \to \Omega$ 是一条 $\alpha$-Hölder 连续曲线。
+                        <br/>(1) 若 $\alpha \in \left(\frac{1}{2},1\right)$，证明：$u \in L_{\mathrm{loc}}^1(\Omega \times (0,1))$。
+                        <br/>(2) 若 $\alpha \in \left(0,\frac{1}{2}\right]$，(1) 的结论还成立吗？
+                        <br/>(3) 设 $\Gamma = \{(\xi_1(t),t) \mid t \in (0,1)\} \cup \{(\xi_2(t),t) \mid t \in (0,1)\}$，其中 $\xi_i: [0,1] \to \Omega$ (i=1,2) 为 $\alpha$-Hölder 连续曲线且 $\alpha \in \left(\frac{1}{2},1\right)$，(1) 的结论还成立吗？
+                        <br/>
+                        <div style=" text-align :center;">
+                            <img class="picflower" src="pu/image/decoration.jpg" alt=" Decoration" />
+                        </div>
+                        <br/>
+                        <a id = "question 64"> </a>
+                        <b>64期</b><br/>
+                        作为第64期《蛙鸣》第52-78页《从正多边形中的有理比到tan(π/n)的极小多项式》一文的后续，林开亮老师提出了以下猜想，蛙鸣编辑部进行悬赏征解.
+                        第一位将<b>正确并且完整的解答</b>（证明或否证）投稿至本刊的揭榜者将获得稿酬 = max{ 600, 实际稿费 }.
+                        <br />
+                        <div class=" writenote" style=" padding: 0px 16px;">
+                            <b>猜想</b>&nbsp;&nbsp;
+                            设正整数 <img src="https://latex.codecogs.com/svg.image? n " title="n" /> 满足 <img src="https://latex.codecogs.com/svg.image?6\mid&space;n" title="6\mid n" />，
+                            整数 <img src="https://latex.codecogs.com/svg.image?k_1,&space;k_2" title="k_1, k_2" /> 满足
+                            <img src="https://latex.codecogs.com/svg.image?\gcd(n,k_1,k_2)=1" title="\gcd(n,k_1,k_2)=1" /> 且
+                            <img src="https://latex.codecogs.com/svg.image?\cos\frac{k_1\pi}{n}\cos\frac{k_2\pi}{n}\neq&space;0" title="\cos\frac{k_1\pi}{n}\cos\frac{k_2\pi}{n}\neq 0" />. 若
+                            <div style="text-align:center"><img src="https://latex.codecogs.com/svg.image?\beta=\frac{\cos\frac{k_2\pi}{n}}{\cos\frac{k_1\pi}{n}}\neq&space;\pm&space;1," title="\beta=\frac{\cos\frac{k_2\pi}{n}}{\cos\frac{k_1\pi}{n}}\neq \pm 1," /></div>
+                            则
+                            <div style="text-align:center"><img src="https://latex.codecogs.com/svg.image?\cos\frac{k_1\pi}{n}\cos\frac{k_2\pi}{n}\in\mathbb{Q}(\beta)." title="\beta=\frac{\cos\frac{k_2\pi}{n}}{\cos\frac{k_1\pi}{n}}\neq \pm 1," /></div>
+                        </div>
+                        <b>额外信息：</b>当 <img src="https://latex.codecogs.com/svg.image?6\nmid&space;n" title="6\nmid n" />时，林开亮老师已在文章<a href=" pdf/degree.pdf" title="点击下载">《有理角三角函数比值的次数与极小多项式》</a>（定理 2.3 的证明中）确认上述猜想成立（猜想 5.1），在此向他表示特别的感谢.
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapseFour">
+                            往期阅览（点击展开）
+                        </a>
+                        <a id="history"> </a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class=" writenote" style=" padding: 0px 16px;">
+                            <p>目前1-63期中暂缺：<b>11-13，17，19-20，23-24，29-34，37-43</b>（共21期）</p>
+                            <p>
+                                若各位校友、老师有这些期数的《蛙鸣》，请邮件<a title=" 点击并邮件联系我们" href=" mailto:&#109&#97&#116&#104&#115&#117&#48&#49&#64&#117&#115&#116&#99&#46&#101&#100&#117&#46&#99&#110">联系我们</a>！感谢您的建议与帮助！
+                            </p>
+                        </div>
+                        <div class=" gallery">
+                            <div class=" row">
+                                <div class=" head">
+                                    <img class=" picdec" src=" pu/image/lotusleaf.png" alt=" 荷叶" />&nbsp;&nbsp;第 60 - 63 期
+                                </div>
+                                <a href=" pdf/Issue 63 (2009.06).pdf">63 (2009.06)</a>
+                                <a href=" pdf/Issue 62 (2008.05).pdf">62 (2008.05)</a>
+                                <a href=" pdf/Issue 61 (2007.06).pdf">61 (2007.06)</a>
+                                <a href=" pdf/Issue 60 (2006.06).pdf">60 (2006.06)</a>
+                            </div>
+
+
+                            <div class=" row">
+                                <div class=" head">
+                                    <img class=" picdec" src="pu/image/lotusleaf.png" alt=" 荷叶" />&nbsp;&nbsp;第 50 - 59 期
+                                </div>
+                                <a href=" pdf/Issue 59 (2005.06).pdf">59 (2005.06)</a>
+                                <a href=" pdf/Issue 58 (2004.12).pdf">58 (2004.12)</a>
+                                <a href=" pdf/Issue 57 (2003.12).pdf">57 (2003.12)</a>
+                                <a href=" pdf/Issue 56 (2002).pdf">56 (2002)</a>
+                                <a href=" pdf/Issue 55 (2000.06).pdf">55 (2000.06)</a>
+                                <a href=" pdf/Issue 54 (1999.06).pdf">54 (1999.06)</a>
+                                <a href=" pdf/Issue 53 (1998.10).pdf">53 (1998.10)</a>
+                                <a href=" pdf/Issue 52 (1995.09).pdf">52 (1995.09)</a>
+                                <a href=" pdf/Issue 50-51 (1994.11).pdf">50-51 (1994.11)</a>
+                            </div>
+
+
+                            <div class=" row">
+                                <div class=" head">
+                                    <img class=" picdec" src=" pu/image/lotusleaf.png" alt=" 荷叶" />&nbsp;&nbsp;第 40 - 49 期
+                                </div>
+                                <a href=" pdf/Issue 49 (1994.09).pdf">49 (1994.09)</a>
+                                <a href=" pdf/Issue 48 (1993.06).pdf">48 (1993.06)</a>
+                                <a href=" pdf/Issue 47 (1992.11).pdf">47 (1992.11)</a>
+                                <a href=" pdf/Issue 46 (1992.06).pdf">46 (1992.06)</a>
+                                <a href=" pdf/Issue 45 (1991.12).pdf">45 (1991.12)</a>
+                                <a href=" pdf/Issue 44 (1991.04).pdf">44 (1991.04)</a>
+                            </div>
+
+
+                            <div class=" row">
+                                <div class=" head">
+                                    <img class=" picdec" src=" pu/image/lotusleaf.png" alt=" 荷叶" />&nbsp;&nbsp;第 30 - 39 期
+                                </div>
+                                <a href=" pdf/Issue 36 (1988.08).pdf">36 (1988.08)</a>
+                                <a href=" pdf/Issue 35 (1988.06).pdf">35 (1988.06)</a>
+                            </div>
+
+
+                            <div class=" row">
+                                <div class=" head">
+                                    <img class=" picdec" src=" pu/image/lotusleaf.png" alt=" 荷叶" />&nbsp;&nbsp;第 20 - 29 期
+                                </div>
+                                <a href=" pdf/Issue 28 (1987.06).pdf">28 (1987.06)</a>
+                                <a href=" pdf/Issue 27 (1987.04).pdf">27 (1987.04)</a>
+                                <a href=" pdf/Issue 26 (1986.12).pdf">26 (1986.12)</a>
+                                <a href=" pdf/Issue 25 (1986.11).pdf">25 (1986.11)</a>
+                                <a href=" pdf/Issue 22 (1985.11).pdf">22 (1985.11)</a>
+                                <a href=" pdf/Issue 21 (1985.11).pdf">21 (1985.11)</a>
+                            </div>
+
+
+                            <div class=" row">
+                                <div class=" head">
+                                    <img class=" picdec" src=" pu/image/lotusleaf.png" alt=" 荷叶" />&nbsp;&nbsp;第 10 - 19 期
+                                </div>
+                                <a href=" pdf/Issue 18.pdf">18</a>
+                                <a href=" pdf/Issue 16 (1984.03).pdf">16 (1984.03)</a>
+                                <a href=" pdf/Issue 15 (1984.03).pdf">15 (1984.03)</a>
+                                <a href=" pdf/Issue 14 (1983.12).pdf">14 (1983.12)</a>
+                            </div>
+
+
+                            <div class=" row">
+                                <div class=" head">
+                                    <img class=" picdec" src=" pu/image/lotusleaf.png" alt=" 荷叶" />&nbsp;&nbsp;第 01 - 10 期与番外
+                                </div>
+                                <a href=" pdf/Issue 1-10 (1983.05).pdf">1-10 (1983.05)</a>
+                                <a href=" pdf/Award-winning Paper (1986).pdf">纪念《蛙鸣》创刊五周年 获奖论文选集</a>
+                                <a href=" pdf/Journal of Undergraduate Vol.4, Issue 1 (1988.01).pdf">中国科学技术大学学生学报 数学专辑 第4卷 第1期（1988.01）</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style=" text-align:center">
+            <br />
+            <img class=" pic3" src=" pu/image/wawa.jpg" alt="可爱的蛙蛙" />
+            <br />
+        </div>
+
+        <div style=" text-align :center;">
+            <img class="picflower" src=" pu/image/decoration.jpg" alt=" Decoration" />
+        </div>
+        <div style=" text-align :center">
+            <b>1981年6月20日</b><br />
+            自写、自编、自刻、自印<br />
+            诞生了一本属于数学系同学们的杂志<br />
+            《蛙鸣》承载着科大精神<br />
+            满怀老师们的关心、呵护和鼓励<br />
+            刻录着我们的勇气和成长<br />
+            我们渴望着去探索、去分享、去交流、去创造<br />
+            我们因自己关于数学和世界的小小想法而兴奋<br />
+            那一声纯粹而质朴的蛙鸣啊<br />
+            在我们每一个人的心中蛰伏<br />
+            <img class=" pic6" src=" pu/image/inscription.jpg" alt=" 谷超豪先生一九九四年为《蛙鸣》题词：其形虽小 其声也宏 充实基础 奏出强音" />
+            <br />谷超豪院士一九九四年为《蛙鸣》题词
+            <br/><br/><br/>
+        </div>
+    </div>
+
+    <script>/*返回顶部按钮*/
+        // 当网页向下滑动 20px 出现"Top" 按钮
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            console.log(121);
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                                /*document.getElementById("myBtn").style.display = "block";*/ $("#myBtn").fadeIn("slow");
+            } else {
+                                /*document.getElementById("myBtn").style.display = "none"; */$("#myBtn").fadeOut("slow");
+            }
+        }
+
+        // 点击按钮，返回顶部
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+</html>
