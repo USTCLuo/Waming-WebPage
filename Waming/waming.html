@@ -28,6 +28,35 @@
             line-height: 180%;
             font-size: 16px;
         }
+            .desc {
+        margin-top: 8px;
+        line-height: 1.6;
+    }
+    .desc a {
+        display: inline-block;
+        margin: 0 5px 5px 0;  /* 给链接之间加间距 */
+        padding: 2px 6px;
+        background-color: #f0f0f0;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    .desc a:hover {
+        background-color: #e0e0e0;
+    }
+    .responsive {
+        border-bottom: 1px solid #ccc;  /* 灰色细线，宽度1px，实线，灰色 */
+        padding-bottom: 20px;  /* 线和内容的距离 */
+        margin-bottom: 20px;   /* 和外部的距离 */
+    }
+
+    /* 最后一行不需要底边线 */
+    .responsive:last-child,
+    .responsive:nth-last-child(2) {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
     </style>
 </head>
 <body>
@@ -96,21 +125,21 @@
                     <div class="panel-body">
                         <b><a href="#pic">点击下方图片</a>下载各期蛙鸣，点击链接查看<a href="#history" onclick="$(function () { $('#collapseFour').collapse('show')});">往期蛙鸣.</a></b><br />
                         <br />
-                        <div style="margin:auto">
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; justify-items: center; margin: 20px auto; max-width: 800px;">
                             <div class="responsive">
                                 <div class="img" id="pic">
                                     <a target="_blank" href="pu/pdf/Warming_67(2025.07).pdf">
                                         <img class=" pic4" src="pu/image/67.jpg" alt="点击下载第67期《蛙鸣》" width="180" height="250" />
                                     </a>
                                     <div class="desc">
-                                        第67期（2025）<br />
+                                        第67期（2025）<br/>
                                         <a title="点击查阅第67期文章目录" href="#content67" onclick="$(function () { $('#collapseTwo').collapse('show')});">文章目录</a>
                                         <a title="点击查阅第67期的勘误与增补" href="#corrections" onclick="$(function () { $('#collapseFive').collapse('show')});">勘误修订</a>
                                     </div>
 
                                 </div>
                             </div>
-                            <hr/>
+                            <!-- <hr/> -->
                             <div class="responsive">
                                 <div class="img" id="pic">
                                     <a target="_blank" href="pu/pdf/Warming_66(2023.07).pdf">
@@ -124,7 +153,7 @@
 
                                 </div>
                             </div>
-                            <hr/>
+                            <!-- <hr/> -->
                             <div class="responsive">
                                 <div class="img" id="pic">
                                     <a target="_blank" href="pu/pdf/Warming_65(2022.06).pdf">
@@ -137,7 +166,7 @@
 
                                 </div>
                             </div>
-                            <hr/>
+                            <!-- <hr/> -->
                             <div class="responsive">
                                 <div class="img">
                                     <a target="_blank" href="pu/pdf/Warming_64(2021.06).pdf">
