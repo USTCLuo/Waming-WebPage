@@ -130,10 +130,33 @@
         margin: 5px !important;
     }
 }
+/* 电脑端样式 (屏幕宽度大于 768px) */
+@media screen and (min-width: 769px) {
+    /* 缩小蛙鸣图片 */
+    .pic3 {
+        max-width: 400px !important;  /* 限制最大宽度 */
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+        margin: 0 auto 20px auto !important;  /* 底部加一点间距 */
+    }
+    
+    /* 放大下面那三行字 */
+    div[style*="line-height:150%"] {
+        font-size: 20px !important;     /* 增大字号 */
+        line-height: 2 !important;       /* 增大行距 */
+        font-weight: 400 !important;     /* 正常字重 */
+        color: #2c3e50 !important;       /* 深灰色，更柔和 */
+    }
+    
+    div[style*="padding:15px"] {
+        padding: 25px !important;  /* 增加内边距 */
+    }
+}
     </style>
 </head>
 <body>
-    <button onclick="topFunction()" id="myBtn" title="Back to Top">返回顶部</button><!--JavaScript返回顶部按钮,参看https://www.runoob.com/w3cnote/js-to-top.html-->
+    <!-- <button onclick="topFunction()" id="myBtn" title="Back to Top">返回顶部</button>JavaScript返回顶部按钮,参看https://www.runoob.com/w3cnote/js-to-top.html -->
     <div class=" box">
         <div style=" text-align :center">
             <img class=" pic3" src="pu/image/title.jpg" alt=" 蛙鸣" />
@@ -162,28 +185,61 @@
         </div>
         <br />
 
-        <div class="panel-group" id="accordion">
-            <!--一个折叠栏模块，参考https://www.runoob.com/bootstrap/bootstrap-collapse-plugin.html-->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#collapseThree"><!--折叠栏编号-->
-                            投稿须知 - 第68期征稿中<!--折叠栏标题-->
-                        </a>
-                    </h4>
+
+
+<div class="panel-group" id="accordion">
+    <!--一个折叠栏模块，参考https://www.runoob.com/bootstrap/bootstrap-collapse-plugin.html-->
+    <div class="panel panel-default" style="border: none; box-shadow: none; background: transparent;">
+        <div class="panel-heading" style="background: transparent; border: none;">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapseThree" style="display: block; text-decoration: none;">
+                    <div style="background: #b22234; color: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                        <span style="font-size: 20px; font-weight: 700; letter-spacing: 1px; display: flex; align-items: center; justify-content: space-between;">
+                            <span>第68期征稿中 ● 2026.4.30截止</span>
+                            <span style="font-size: 14px; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px;">征稿中</span>
+                        </span>
+                    </div>
+                </a>
+            </h4>
+        </div>
+        
+        <div id="collapseThree" class="panel-collapse collapse in">
+            <div class="panel-body" style="padding: 20px; background: #ffffff; border: 1px solid #e0e0e0; border-top: none; border-radius: 0 0 8px 8px;">
+                
+                <!-- 邮箱 -->
+                <div style="background: #f8f8f8; border-left: 4px solid #b22234; padding: 15px; margin-bottom: 15px;">
+                    <div style="font-size: 14px; color: #666; margin-bottom: 5px;">投稿邮箱</div>
+                    <a href="mailto:mathsu01@ustc.edu.cn" style="color: #b22234; font-size: 18px; font-weight: 600; text-decoration: none; border-bottom: 2px solid #b22234;">mathsu01(at)ustc.edu.cn</a>
                 </div>
-                <div id="collapseThree" class="panel-collapse collapse in">
-                    <div class="panel-body"><!--一个折叠栏内容-->
-                        <b>投稿邮箱：</b><a title=" 点击并邮件联系我们" href=" mailto:&#109&#97&#116&#104&#115&#117&#48&#49&#64&#117&#115&#116&#99&#46&#101&#100&#117&#46&#99&#110"<!--ASCII码写邮箱地址防止批量抓取-->mathsu01(at)ustc.edu.cn</a>，第68期征稿中，预计2026年6月发布.<br />
-
-                        <b>详细信息：</b><a href=" file/Warming_submission_guidelines.pdf">投稿须知</a>，稿件若含数学公式则需使用我们的：
-                        <a href=" file/Warming_chinese_template.zip">LaTeX模版</a>.<br />
-
-                        <a id="contact"> </a>
-                        <b>联系我们：</b>致信上述邮箱 或 中国科大数院学生会QQ公众号 <a title=" 点击获取QQ二维码" href=" image/code.jpg">2061453364</a>（蜗壳的书院）.
+                
+                <!-- 稿件要求和模板 -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: #f8f8f8; padding: 15px; border-radius: 6px;">
+                        <div style="font-weight: 700; color: #b22234; margin-bottom: 8px;">投稿须知</div>
+                        <a href="pu/file/征稿启事.pdf" style="color: #2c3e50; text-decoration: none; border: 1px solid #b22234; padding: 4px 12px; border-radius: 4px; display: inline-block;">查看&下载</a>
+                    </div>
+                    
+                    <div style="background: #f8f8f8; padding: 15px; border-radius: 6px;">
+                        <div style="font-weight: 700; color: #b22234; margin-bottom: 8px;">LaTeX模板</div>
+                        <a href="pu/file/蛙鸣68征稿启事.rar" style="color: #2c3e50; text-decoration: none; border: 1px solid #b22234; padding: 4px 12px; border-radius: 4px; display: inline-block;">下载模板</a>
                     </div>
                 </div>
+                
+                <!-- 联系方式 -->
+                <div style="background: #f0f0f0; padding: 15px; border-radius: 6px; font-size: 15px;">
+                    <span style="font-weight: 700; color: #b22234;">联系我们：</span>
+                    邮箱 · 
+                    <a href="image/code.jpg" title="点击获取QQ二维码" style="color: #2c3e50; font-weight: 600;">QQ 2061453364</a>
+                    （蜗壳的书院）
+                </div>
+                
             </div>
+        </div>
+    </div>
+</div>
+
+
+
 
             <div class="panel panel-default"><!--另一个折叠栏模块-->
                 <div class="panel-heading">
