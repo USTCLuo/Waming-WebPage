@@ -57,6 +57,65 @@
         margin-bottom: 0;
         padding-bottom: 0;
     }
+    @media screen and (max-width: 600px) {
+    /* 让整个容器有合适的边距 */
+    .box {
+        padding: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    
+    /* 标题图片适应屏幕 */
+    .pic3 {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    /* 刊物发布区域的网格布局 */
+    div[style*="display: grid"] {
+        grid-template-columns: 1fr !important;  /* 手机上一列显示 */
+        gap: 20px !important;
+        max-width: 100% !important;
+        padding: 0 10px !important;
+        box-sizing: border-box;
+    }
+    
+    /* 每个刊物的卡片 */
+    .responsive {
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* 图片大小控制 */
+    .responsive img {
+        max-width: 100% !important;
+        height: auto !important;
+        width: auto !important;
+        max-height: 300px;  /* 限制最大高度 */
+    }
+    
+    /* 文字大小调整 */
+    body {
+        font-size: 14px;
+    }
+    
+    .panel-title {
+        font-size: 16px !important;
+    }
+    
+    /* 让折叠面板内容对齐 */
+    .panel-body {
+        padding: 15px !important;
+    }
+    
+    /* 确保所有内容不溢出 */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
     </style>
 </head>
 <body>
