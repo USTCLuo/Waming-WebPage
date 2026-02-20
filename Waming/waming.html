@@ -129,6 +129,75 @@
         display: inline-block;
         margin: 5px !important;
     }
+        /* 征稿标题行优化 */
+    a[href="#collapseThree"] > div {
+        padding: 12px 15px !important;
+    }
+    
+    a[href="#collapseThree"] span[style*="justify-content"] {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+    
+    /* "征稿中"标签缩小并放在一行 */
+    a[href="#collapseThree"] span[style*="background: rgba(255,255,255,0.2)"] {
+        font-size: 12px !important;
+        padding: 3px 10px !important;
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+    
+    /* 投稿邮箱区域 */
+    .panel-body > div:first-child {
+        padding: 12px !important;
+    }
+    
+    .panel-body > div:first-child a {
+        font-size: 16px !important;
+        word-break: break-all !important;  /* 防止邮箱太长溢出 */
+    }
+    
+    /* 投稿须知和模板放在同一行 */
+    .panel-body > div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* 每个卡片内边距调小 */
+    .panel-body > div[style*="grid-template-columns: 1fr 1fr"] > div {
+        padding: 12px 8px !important;
+        text-align: center !important;
+    }
+    
+    /* 按钮样式调整 */
+    .panel-body > div[style*="grid-template-columns: 1fr 1fr"] a {
+        display: inline-block !important;
+        margin-top: 6px !important;
+        font-size: 13px !important;
+        padding: 4px 10px !important;
+    }
+    
+    /* 联系方式区域 */
+    .panel-body > div:last-child {
+        padding: 12px !important;
+        font-size: 14px !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+    
+    .panel-body > div:last-child span[style*="font-weight: 700"] {
+        display: inline-block !important;
+    }
+    
+    /* QQ部分 */
+    .panel-body > div:last-child a[href*="image/code.jpg"] {
+        display: inline-block !important;
+        padding: 3px 10px !important;
+        font-size: 14px !important;
+    }
 }
 /* 电脑端样式 (屏幕宽度大于 768px) */
 @media screen and (min-width: 769px) {
