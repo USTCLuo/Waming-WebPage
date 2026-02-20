@@ -57,35 +57,34 @@
         margin-bottom: 0;
         padding-bottom: 0;
     }
-    @media screen and (max-width: 600px) {
-    /* 让整个容器有合适的边距 */
-    .box {
-        padding: 10px !important;
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-    
-    /* 标题图片适应屏幕 */
-    .pic3 {
-        max-width: 100% !important;
-        height: auto !important;
-        display: block;
-        margin: 0 auto;
-    }
-    
-    /* 刊物发布区域的网格布局 */
+    /* 移动端适配 */
+@media screen and (max-width: 600px) {
+    /* 让刊物发布区域一列显示并居中 */
     div[style*="display: grid"] {
-        grid-template-columns: 1fr !important;  /* 手机上一列显示 */
-        gap: 20px !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;  /* 一列 */
+        justify-items: center !important;       /* 水平居中 */
+        gap: 0 !important;                      /* 间隙由 margin 控制 */
         max-width: 100% !important;
-        padding: 0 10px !important;
-        box-sizing: border-box;
+        padding: 0 !important;
     }
     
-    /* 每个刊物的卡片 */
+    /* 每个卡片居中，并加下边框作为横线 */
     .responsive {
         width: 100% !important;
+        max-width: 300px !important;            /* 限制卡片最大宽度 */
         margin: 0 auto !important;
+        text-align: center !important;
+        border-bottom: 1px solid #ccc !important; /* 每本下面都有横线 */
+        padding-bottom: 25px !important;
+        margin-bottom: 25px !important;
+    }
+    
+    /* 最后一本不需要横线（去掉最后一个的边框） */
+    .responsive:last-child {
+        border-bottom: none !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
     }
     
     /* 图片大小控制 */
@@ -93,27 +92,35 @@
         max-width: 100% !important;
         height: auto !important;
         width: auto !important;
-        max-height: 300px;  /* 限制最大高度 */
+        max-height: 280px;
+        display: block;
+        margin: 0 auto;
     }
     
-    /* 文字大小调整 */
-    body {
-        font-size: 14px;
+    /* 标题图片 */
+    .pic3 {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block;
+        margin: 0 auto;
     }
     
-    .panel-title {
-        font-size: 16px !important;
-    }
-    
-    /* 让折叠面板内容对齐 */
-    .panel-body {
-        padding: 15px !important;
-    }
-    
-    /* 确保所有内容不溢出 */
-    * {
-        max-width: 100%;
+    /* 整体容器留边 */
+    .box, .panel-body {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
         box-sizing: border-box;
+    }
+    
+    /* 文字居中 */
+    .desc {
+        text-align: center !important;
+    }
+    
+    /* 按钮样式调整 */
+    .desc a {
+        display: inline-block;
+        margin: 5px !important;
     }
 }
     </style>
