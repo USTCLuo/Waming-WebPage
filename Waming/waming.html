@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <!--注释可以写在这样一对括号中，.css文件中的注释由/* */包围起来-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href=" css/star.css"><!--指定我们用的css文件在css/star.css，它指定了网页的样式，样式可以进行叠加，不同的指定样式的方式、它们的优先级见https://www.runoob.com/css/css-howto.html-->
+    <link rel="stylesheet" type="text/css" href="pu/css/star.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script><!--插入JavaScript-->
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -49,10 +49,16 @@
         padding-bottom: 20px;  /* 线和内容的距离 */
         margin-bottom: 20px;   /* 和外部的距离 */
     }
+    .responsive > .img {
+        float: none;
+        width: 180px;
+        max-width: 100%;
+        margin: 5px auto;
+    }
 
     /* 最后一行不需要底边线 */
     .responsive:last-child,
-    .responsive:nth-last-child(2) {
+    .responsive:nth-last-child(2):nth-child(odd) {
         border-bottom: none;
         margin-bottom: 0;
         padding-bottom: 0;
@@ -233,21 +239,22 @@
                 <span class=" time"></span>
                 <div style=" line-height:150%">
                     中国科大学生数学杂志<br />
-                    1981.6.20 - 2025.6.26<br />
+                    1981.6.20 - 2026.7<br />
                     愿我们一同见证一代中国科大人的成长
                 </div>
                 <span class=" time"></span>
             </div>
 
-            <img style=" max-width :100%; width: 500px;" src="pu/image/heading67.png" alt="四十周年纪念刊第64期《蛙鸣》发布！" />
+            <h1 style="font-size: 28px; line-height: 1.5; color: #b22234;">第68期《蛙鸣》发布！</h1>
+            <p>2026年7月 · 电子版现已开放下载</p>
             <br />
             <br />
             <div style=" text-align: center">
                 <!--#electronic参考id选择器https://www.runoob.com/css/css-id-class.html-->
                 <!--onclick事件是指定点击这个按钮后发生什么，这里是展开后面的折叠栏-->
-                <a class="badge" href="#electronic" onclick="$(function () { $('#collapseOne').collapse('show')});">第67期电子版</a>
+                <a class="badge" href="#electronic" onclick="$(function () { $('#collapseOne').collapse('show')});">第68期电子版</a>
                 <a class="badge" href="#corrections" onclick="$(function () { $('#collapseFive').collapse('show')});">勘误修订</a>
-                <a class="badge" href="#solution" onclick="$(function () { $('#collapseSix').collapse('show')});">悬赏征解</a>
+                <a class="badge" href="#solution" onclick="$(function () { $('#collapseSeven').collapse('show')});">悬赏征解</a>
                 <a class="badge" href="#history" onclick="$(function () { $('#collapseFour').collapse('show')});">往期阅览</a>
                 <a class="badge" href="#contact" onclick="$(function () { $('#collapseThree').collapse('show')});">联系我们</a>
             </div>
@@ -264,7 +271,7 @@
                 <a data-toggle="collapse" href="#collapseThree" style="display: block; text-decoration: none;">
                     <div style="background: #b22234; color: white; padding: 16px 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                         <span style="font-size: 20px; font-weight: 700; letter-spacing: 1px; display: flex; align-items: center; justify-content: space-between;">
-                            <span>第68期征稿中 ● 2026.4.30截止</span>
+                            <span>第69期征稿启事</span>
                             <span style="font-size: 14px; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px;">征稿中</span>
                         </span>
                     </div>
@@ -275,6 +282,7 @@
         <div id="collapseThree" class="panel-collapse collapse in">
             <div class="panel-body" style="padding: 20px; background: #ffffff; border: 1px solid #e0e0e0; border-top: none; border-radius: 0 0 8px 8px;">
                 
+                <a id="contact"> </a>
                 <!-- 邮箱 -->
                 <div style="background: #f8f8f8; border-left: 4px solid #b22234; padding: 15px; margin-bottom: 15px;">
                     <div style="font-size: 14px; color: #666; margin-bottom: 5px;">投稿邮箱</div>
@@ -285,7 +293,7 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
                     <div style="background: #f8f8f8; padding: 15px; border-radius: 6px;">
                         <div style="font-weight: 700; color: #b22234; margin-bottom: 8px;">投稿须知</div>
-                        <a href="pu/file/征稿启事.pdf" style="color: #2c3e50; text-decoration: none; border: 1px solid #b22234; padding: 4px 12px; border-radius: 4px; display: inline-block;">查看&下载</a>
+                        <a href="pu/file/蛙鸣69征稿启事.pdf" style="color: #2c3e50; text-decoration: none; border: 1px solid #b22234; padding: 4px 12px; border-radius: 4px; display: inline-block;">查看&下载</a>
                     </div>
                     
                     <div style="background: #f8f8f8; padding: 15px; border-radius: 6px;">
@@ -325,6 +333,18 @@
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; justify-items: center; margin: 20px auto; max-width: 800px;">
                             <div class="responsive">
                                 <div class="img" id="pic">
+                                    <a target="_blank" rel="noopener" href="pu/pdf/Warming_68(2026.07).pdf">
+                                        <img class="pic4" src="pu/image/68.jpg" alt="点击下载第68期《蛙鸣》" width="180" height="255" />
+                                    </a>
+                                    <div class="desc">
+                                        第68期（2026）<br />
+                                        <a title="点击查阅第68期文章目录" href="#content68" onclick="$(function () { $('#collapseTwo').collapse('show')});">文章目录</a>
+                                        <a title="点击下载第68期完整电子版" href="pu/pdf/Warming_68(2026.07).pdf">完整电子版</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="responsive">
+                                <div class="img">
                                     <a target="_blank" href="pu/pdf/Warming_67(2025.07).pdf">
                                         <img class=" pic4" src="pu/image/67.jpg" alt="点击下载第67期《蛙鸣》" width="180" height="250" />
                                     </a>
@@ -338,7 +358,7 @@
                             </div>
                             <!-- <hr/> -->
                             <div class="responsive">
-                                <div class="img" id="pic">
+                                <div class="img">
                                     <a target="_blank" href="pu/pdf/Warming_66(2023.07).pdf">
                                         <img class=" pic4" src="pu/image/66.jpg" alt="点击下载第66期《蛙鸣》" width="180" height="250" />
                                     </a>
@@ -352,7 +372,7 @@
                             </div>
                             <!-- <hr/> -->
                             <div class="responsive">
-                                <div class="img" id="pic">
+                                <div class="img">
                                     <a target="_blank" href="pu/pdf/Warming_65(2022.06).pdf">
                                         <img class=" pic4" src="pu/image/65.jpg" alt="点击下载第65期《蛙鸣》" width="180" height="250" />
                                     </a>
@@ -403,7 +423,7 @@
                     </div>
                     <div class="panel-body">
                         <b>第64期《从正多边形中的有理比到tan(π/n)的极小多项式》</b>
-                        <br />更正文中的猜想8.5-8.7，增加前人有关工作的信息：<a href=" pdf/correction.pdf" title="点击下载">补充与更正</a>. 详细信息参见：<a href="#solution" onclick="$(function () { $('#collapseSix').collapse('show')});">悬赏征解</a>.<br />
+                        <br />更正文中的猜想8.5-8.7，增加前人有关工作的信息：<a href="pu/pdf/correction.pdf" title="点击下载">补充与更正</a>. 详细信息参见：<a href="#solution" onclick="$(function () { $('#collapseSeven').collapse('show')});">悬赏征解</a>.<br />
                     </div>
                 </div>
             </div>
@@ -419,6 +439,33 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse">
                     <div class="panel-body" style=" padding:20px;">
+
+                        <a id="content68"> </a>
+                        <b>蛙鸣第68期</b><br />
+                        2026.7<br />
+                        <br />
+                        <b>1、初阳</b><br />
+                        一道概率小题目：巧算面积期望<br />
+                        在线背包问题的最优竞争比与鲁棒性<br />
+                        <br />
+                        <b>2、蛙声一片</b><br />
+                        双曲平面的一些几何性质<br />
+                        基于行列式乘子表示的 LMSD 收敛证明及加权 Ritz 推广<br />
+                        降维的艺术：Krylov 子空间与 GMRES 方法<br />
+                        AI时代的数学研究——专访九重团队<br />
+                        Fitch Cheney’s Five-Card Trick: Combinatorial Insights and Generalization<br />
+                        Research on the Erdős Matching Conjecture and Focal-free uniform hypergraphs<br />
+                        <br />
+                        <b>3、笔墨文篇</b><br />
+                        庐山小姑娘<br />
+                        春色如茶<br />
+                        <br />
+                        致谢<br />
+                        <a href="pu/file/蛙鸣69征稿启事.pdf">第69期征稿启事</a><br />
+                        <br />
+                        <div style=" text-align :center;">
+                            <img class="picflower" src="pu/image/decoration.jpg" alt=" Decoration" />
+                        </div>
 
                         <a id="content67"> </a>
                         <b>蛙鸣第67期</b><br />
@@ -552,7 +599,7 @@
                 </div>
                 <div id="collapseSeven" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <a id = "question 67"></a>
+                        <a id="question67"></a>
                         <b>67期</b><br/>
                         <p>本题的目标是通过Lindeberg替换术来证明一类随机矩阵的经验谱分布收敛至半圆律分布。具体来说，考虑如下矩阵模型：</p>
                         <p>令 \( X_N \) 为 \( N \times N \) 随机矩阵,设他的特征值从大到小排列分别为 \( \lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_N \)。定义它的经验谱分布为
@@ -634,7 +681,7 @@
                             则
                             <div style="text-align:center"><img src="https://latex.codecogs.com/svg.image?\cos\frac{k_1\pi}{n}\cos\frac{k_2\pi}{n}\in\mathbb{Q}(\beta)." title="\beta=\frac{\cos\frac{k_2\pi}{n}}{\cos\frac{k_1\pi}{n}}\neq \pm 1," /></div>
                         </div>
-                        <b>额外信息：</b>当 <img src="https://latex.codecogs.com/svg.image?6\nmid&space;n" title="6\nmid n" />时，林开亮老师已在文章<a href=" pdf/degree.pdf" title="点击下载">《有理角三角函数比值的次数与极小多项式》</a>（定理 2.3 的证明中）确认上述猜想成立（猜想 5.1），在此向他表示特别的感谢.
+                        <b>额外信息：</b>当 <img src="https://latex.codecogs.com/svg.image?6\nmid&space;n" title="6\nmid n" />时，林开亮老师已在文章<a href="pu/pdf/degree.pdf" title="点击下载">《有理角三角函数比值的次数与极小多项式》</a>（定理 2.3 的证明中）确认上述猜想成立（猜想 5.1），在此向他表示特别的感谢.
                     </div>
                 </div>
             </div>
